@@ -41,7 +41,7 @@ class App extends Component {
             <div>
                 <nav className="navbar navbar-inverse">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="https://reactjs.org/">Props</a>
+                        <a className="navbar-brand" href="https://reactjs.org/">Demo Props in Reactjs</a>
                     </div>
                 </nav>
                 <div className="container">

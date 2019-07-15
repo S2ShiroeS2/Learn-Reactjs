@@ -3,6 +3,9 @@ import './App.css';
 import Product from './component/Product';
 // Prop chẳng qua cũng chỉ là thuộc tính của một componet ( hay còn đc gọi là thuộc tính của một class)
 class App extends Component {
+    clickFunction() {
+        console.log('Done!');
+    }
     render() {
         var products = [
             {
@@ -41,13 +44,17 @@ class App extends Component {
             <div>
                 <nav className="navbar navbar-inverse">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="https://reactjs.org/">Demo Props in Reactjs</a>
+                        <a className="navbar-brand" href="#//">Demo Event Handling</a>
                     </div>
                 </nav>
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             {element_products}
+                        </div>
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            {/* Truyền function không chứa tham số */}
+                            <button onClick={this.clickFunction} type="button" className="btn btn-warning">Click me</button>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Product from './componet/Product';
+import Product from './component/Product';
 // Prop chẳng qua cũng chỉ là thuộc tính của một componet ( hay còn đc gọi là thuộc tính của một class)
 class App extends Component {
     render() {

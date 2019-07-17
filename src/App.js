@@ -6,6 +6,9 @@ class App extends Component {
     clickFunction() {
         console.log('Done!');
     }
+    onAddProduct = () => {
+        console.log(this.refs.nameProduct.value);
+    }
     render() {
         var products = [
             {
@@ -35,8 +38,8 @@ class App extends Component {
         ];
         let element_products = products.map((product, index) => {
             let result = '';
-            if(product.status) {
-                result = <Product key={product.id} title={product.title} img={product.img} name={product.name} price={product.price}/>
+            if (product.status) {
+                result = <Product key={product.id} title={product.title} img={product.img} name={product.name} price={product.price} />
             }
             return result;
         });
@@ -44,11 +47,26 @@ class App extends Component {
             <div>
                 <nav className="navbar navbar-inverse">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#//">Demo Event Handling</a>
+                        <a className="navbar-brand" href="#//">Demo Event Refs</a>
                     </div>
                 </nav>
                 <div className="container">
                     <div className="row">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div className="panel panel-primary">
+                                <div className="panel-heading">
+                                    <h3 className="panel-title">Add to the products</h3>
+                                </div>
+                                <div className="panel-body">
+                                    <div className="form-group">
+                                        <label>Product name</label>
+                                        {/* Lấy giá trị từ các ô input */}
+                                        <input ref="nameProduct" type="text" className="form-control" />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary" onClick={this.onAddProduct}>Save</button>
+                                </div>
+                            </div>
+                        </div>
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             {element_products}
                         </div>

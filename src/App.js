@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Colortext from './components/colortext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            color : 'red',
+            fontSize: 12
+        };
+    }
+    onChangeColor = (color) => {
+        this.setState = ({
+            color: color
+        });
+        console.log(color);
+    }
+    render() {
+        return (
+            <div className="App">            
+                <div className="container mt-50">
+                    <div className="row">
+                        {/* color picker   */}
+                        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <Colortext onChangeColor={this.onChangeColor} defaultColor={this.state.color} />
+                        </div>
+                        {/* Set font size for text */}
+                        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        );
+    }
 }
 
 export default App;
